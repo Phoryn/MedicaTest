@@ -12,5 +12,6 @@ namespace MedicaTest.Models
         public decimal Price { get; set; }
         public DateTime Added { get; set; }
         public DateTime Modified { get; set; }
+      
     }
 }
