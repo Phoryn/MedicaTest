@@ -5,6 +5,15 @@
     ViewData["Title"] = "List";
 }
 
+@section Header{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css" rel="stylesheet" />
+}
+
+
+
+
 <h1>Wszystkie części</h1>
 
 @if (ViewBag.DeleteError == true)
@@ -13,19 +22,19 @@
         <span class="text-danger"> Niestety nastąpił błąd podczas usuwania!.</span>
     </div>
 }
-<table class="table">
+<table id="table" data-toggle="table">
     <thead>
         <tr>
-            <th>
+            <th data-field="Name" data-order='desc' data-sortable="true">
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            <th data-field="Price" data-order='desc' data-sortable="true">
                 @Html.DisplayNameFor(model => model.Price)
             </th>
-            <th>
+            <th data-field="Addd" data-order='desc' data-sortable="true">
                 @Html.DisplayNameFor(model => model.Added)
             </th>
-            <th>
+            <th data-field="Modi" data-order='desc' data-sortable="true">
                 @Html.DisplayNameFor(model => model.Modified)
             </th>
             <th></th>
@@ -56,3 +65,7 @@
         }
     </tbody>
 </table>
+
+@section Scripts{
+    <script src="~/js/site.js"></script>
+}
